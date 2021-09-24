@@ -4,28 +4,36 @@
 <head>
     <meta charset="utf-8">
     <title>Developer Students Club|Navarachna University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" type="text/css" href="main.css">
-
-
-
 </head>
 
 <body>
-
-    <header>
-
-        <a href="#" class="logo"><img src="images/logo-full.png"></a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#Motto">About</a></li>
-            <li><a href="#Updates">Updates</a></li>
-            <li><a href="#Contact-Us">Contact</a></li>
-        </ul>
-    </header>
-
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <a href="#"><img src="images/logo-full.png"></a>
+          </div>
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li><span><a href="#">What is dsc</a></span></li>
+            <li><span><a href="#">Roadmap</a></span></li>
+            <li><span><a href="#">Team</a></span></li>
+            <li><span><a href="#">Faq</a></span></li>
+            <li><span><a href="#">Forum</a></span></li>
+            <li><span><a href="#">Events</a></span></li>
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+    </nav>
     <section>
         <img src="images/logo.png" class="logomain" alt="">
         <img class="illustration" src="images/illustration.png" alt="">
@@ -76,6 +84,24 @@
 
 
 </body>
-
+<script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+</script>
 
 </html>
