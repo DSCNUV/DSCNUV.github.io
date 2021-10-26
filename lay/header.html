@@ -1,0 +1,31 @@
+<a href="https://dscnuv.github.io" class="d-header-logo"><img src="images/logo-full.png"></a>
+<div class="d-header-nav-wrap">
+    <a class="d-header-nav" href="#">
+        Home
+    </a>
+    <a class="d-header-nav" href="#about">
+        About
+    </a>
+    <a class="d-header-nav" href="#updates">
+        Updates
+    </a>
+    <a class="d-header-nav" href="#contact">
+        Contact
+    </a>
+</div>
+<div class="d-resp-menu-tog" onclick="togMenu()">
+    <i class="fas fa-compass"></i>
+</div>
+<script>
+    $(window).on('scroll',function(){
+        var landH = $('.d-landing-wrap').height() - $('header').height();
+        if($(window).scrollTop() < landH){
+            $('header').addClass('trans');
+        }else{
+            $('header').removeClass('trans');
+        }
+    });
+    function togMenu(){
+        $('.d-resp-menu').toggleClass('show');
+    }
+</script>
